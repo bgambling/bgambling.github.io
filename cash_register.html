@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cash Register</title>
+	<!-- Include CSS stylesheets and JavaScript libraries here -->
+	<style>
+	  .quick-click-buttons .btn {
+		background-color: #318434;
+		color: white;
+		font-size: 12px;
+		padding: 10px 20px;
+		border-radius: 5px;
+		line-height: inherit;
+		height: 52px;
+	  }
+	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+	<!-- Navigation bar -->
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo center">Cash Register</a>
+		</div>
+	</nav>
+
+	<!-- Register screen -->
+	<div class="container">
+		<div class="row">
+			<div class="col s12 m6">
+				<div class="card">
+					<div class="card-content">
+						<span class="card-title">Quick Click</span>
+						<div class="quick-click-buttons row">
+							<button class="btn col s4" onclick="quickClickAdd('Milk', 3.50)">Milk<br>$3.50</button>
+							<button class="btn col s4" onclick="quickClickAdd('Orange Juice', 3.00)">Orange Juice<br>$3.00</button>
+							<button class="btn col s4" onclick="quickClickAdd('Carrot', 0.50)">Carrot<br>$0.50</button>
+						</div>
+						<div class="quick-click-buttons row">
+							<button class="btn col s4" onclick="quickClickAdd('Radish', 0.75)">Radish<br>$0.75</button>
+							<button class="btn col s4" onclick="quickClickAdd('Potato', 2.00)">Potato<br>$2.00</button>
+							<button class="btn col s4" onclick="quickClickAdd('Cheese Slices', 4.25)">Cheese Slices<br>$4.25</button>
+						</div>
+						<div class="quick-click-buttons row">
+							<button class="btn col s4" onclick="quickClickAdd('Cream Cheese', 2.75)">Cream Cheese<br>$2.75</button>
+							<button class="btn col s4" onclick="quickClickAdd('Butter', 2.50)">Butter<br>$2.50</button>
+							<button class="btn col s4" onclick="quickClickAdd('Cup Cakes', 8.25)">Cup Cakes<br>$8.25</button>
+						</div>
+
+					</div>
+					<div class="card-content">
+						<span class="card-title">Register</span>
+						<form>
+							<div class="input-field">
+								<input type="text" id="item-name">
+								<label for="item-name">Item name</label>
+							</div>
+							<div class="input-field">
+								<input type="number" id="item-price">
+								<label for="item-price">Item price</label>
+							</div>
+							<button class="btn waves-effect waves-light" type="button" onclick="addItem()">Add Item</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col s12 m6">
+				<div class="card">
+					<div class="card-content">
+						<span class="card-title">Cart</span>
+						<table>
+							<thead>
+								<tr>
+									<th>Item</th>
+									<th>Price</th>
+								</tr>
+							</thead>
+							<tbody id="cart-items">
+							</tbody>
+						</table>
+						<h5>Total: $<span id="total">0.00</span></h5>
+						<button class="btn waves-effect waves-light" type="button" onclick="processPayment()">Process Payment</button>
+						<button class="btn waves-effect waves-light" type="button" onclick="cancelOrder()">Cancel Order</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Include custom JavaScript code here -->
+	<script>
+		// Define global variables
+		var cart = [];
+		var total = 0;
+
+		// Add item to cart
+		function addItem() {
+			var item = {
+				name: $('#item-name').val(),
+				price: parseFloat($('#item-price').val())
+			};
+			cart.push(item);
+			$('#cart-items').append('<tr><td>' + item.name + '</td><td>$' + item.price.toFixed(2) + '</td></tr>');
+			total += item.price;
+			$('#total').text(total.toFixed(2));
+			$('#item-name').val('');
+			$('#item-price').val('');
+		}
+
+		// Quick click add
+		function quickClickAdd(itemName, itemPrice) {
+			var item = {
+				name: itemName,
+				price: parseFloat(itemPrice)
+			};
+			cart.push(item);
+			$('#cart-items').append('<tr><td>' + item.name + '</td><td>$' + item.price.toFixed(2) + '</td></tr>');
+			total += item.price;
+			$('#total').text(total.toFixed(2));
+		}
+
+
+		// Process payment
+		function processPayment() {
+			alert('Payment processed. Thank you!');
+			cart = [];
+			total = 0;
+			$('#cart-items').empty();
+			$('#total').text('0.00');
+		}
+
+		// Cancel order
+		function cancelOrder() {
+			cart = [];
+			total = 0;
+			$('#cart-items').empty();
+			$('#total').text('0.00');
+		}
+	</script>
+</body>
+</html>
