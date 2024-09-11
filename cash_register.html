@@ -2,7 +2,6 @@
 <html>
 <head>
 	<title>Shop / Cash Register</title>
-	<!-- Include CSS stylesheets and JavaScript libraries here -->
 	<style>
 	  .quick-click-buttons .btn {
 		background-color: #318434;
@@ -34,40 +33,40 @@
 					<div class="card-content">
 						<span class="card-title">Fruits</span>
 						<div class="quick-click-buttons row">
-							<button class="btn col s4" haptic="light" onclick="quickClickAdd('Grapes &#127815', 3.50)">&#127815<br>$3.50</button>
-							<button class="btn col s4" haptic="light" onclick="quickClickAdd('Water Melon 	&#127817', 3.00)">&#127817<br>$3.00</button>
-							<button class="btn col s4" haptic="light" onclick="quickClickAdd('Lemon &#127819', 0.75)">&#127819<br>$0.75</button>
+							<button class="btn col s4" onclick="quickClickAdd('Grapes', 3.50)">Grapes<br>$3.50</button>
+							<button class="btn col s4" onclick="quickClickAdd('Water Melon', 3.00)">Water Melon<br>$3.00</button>
+							<button class="btn col s4" onclick="quickClickAdd('Lemon', 0.75)">Lemon<br>$0.75</button>
 						</div>
 						<div class="quick-click-buttons row">
-							<button class="btn col s4" haptic="light" onclick="quickClickAdd('Banana &#127820', 0.50)">&#127820<br>$0.50</button>
-							<button class="btn col s4" haptic="light" onclick="quickClickAdd('Pinapple &#127821', 5.00)">&#127821<br>$5.00</button>
-							<button class="btn col s4" haptic="light" onclick="quickClickAdd('Apple &#127822', 3.75)">&#127822<br>$3.75</button>
+							<button class="btn col s4" onclick="quickClickAdd('Banana', 0.50)">Banana<br>$0.50</button>
+							<button class="btn col s4" onclick="quickClickAdd('Pineapple', 5.00)">Pineapple<br>$5.00</button>
+							<button class="btn col s4" onclick="quickClickAdd('Apple', 3.75)">Apple<br>$3.75</button>
 						</div>
 					</div>
 					<div class="card-content">
 						<span class="card-title">Vegetables</span>
 						<div class="quick-click-buttons row">
-							<button class="btn col s4" haptic="light" onclick="quickClickAdd('Avocado &#129361', 2.50)">&#129361<br>$2.50</button>
-							<button class="btn col s4" haptic="light" onclick="quickClickAdd('Corn &#127805', 0.50)">&#127805<br>$0.50</button>
-							<button class="btn col s4" haptic="light" onclick="quickClickAdd('Carrot &#x1F955', 0.15)">&#x1F955<br>$0.15</button>
+							<button class="btn col s4" onclick="quickClickAdd('Avocado', 2.50)">Avocado<br>$2.50</button>
+							<button class="btn col s4" onclick="quickClickAdd('Corn', 0.50)">Corn<br>$0.50</button>
+							<button class="btn col s4" onclick="quickClickAdd('Carrot', 0.15)">Carrot<br>$0.15</button>
 						</div>
 						<div class="quick-click-buttons row">
-							<button class="btn col s4" haptic="light" onclick="quickClickAdd('Broccoli &#129382', 1.50)">&#129382<br>$1.50</button>
-							<button class="btn col s4" haptic="light" onclick="quickClickAdd('Potato &#129364', 1.75)">&#129364<br>$1.75</button>
-							<button class="btn col s4" haptic="light" onclick="quickClickAdd('Hot Pepper &#127798', 0.75)">&#127798<br>$0.75</button>
+							<button class="btn col s4" onclick="quickClickAdd('Broccoli', 1.50)">Broccoli<br>$1.50</button>
+							<button class="btn col s4" onclick="quickClickAdd('Potato', 1.75)">Potato<br>$1.75</button>
+							<button class="btn col s4" onclick="quickClickAdd('Hot Pepper', 0.75)">Hot Pepper<br>$0.75</button>
 						</div>
 					</div>
 					<div class="card-content">
 						<span class="card-title">Food</span>
 						<div class="quick-click-buttons row">
-							<button class="btn col s4" haptic="light" onclick="quickClickAdd('Hamburger &#127828', 6.50)">&#127828<br>$6.50</button>
-							<button class="btn col s4" haptic="light" onclick="quickClickAdd('Hot Dog &#127789', 1.50)">&#127789<br>$1.50</button>
-							<button class="btn col s4" haptic="light" onclick="quickClickAdd('French Fries &#127839', 1.25)">&#127839<br>$1.25</button>
+							<button class="btn col s4" onclick="quickClickAdd('Hamburger', 6.50)">Hamburger<br>$6.50</button>
+							<button class="btn col s4" onclick="quickClickAdd('Hot Dog', 1.50)">Hot Dog<br>$1.50</button>
+							<button class="btn col s4" onclick="quickClickAdd('French Fries', 1.25)">French Fries<br>$1.25</button>
 						</div>
 						<div class="quick-click-buttons row">
-							<button class="btn col s4" haptic="light" onclick="quickClickAdd('Pizza &#127829', 1.75)">&#127829<br>$1.75</button>
-							<button class="btn col s4" haptic="light" onclick="quickClickAdd('Taco &#127790', 1.00)">&#127790<br>$1.00</button>
-							<button class="btn col s4" haptic="light" onclick="quickClickAdd('Burrito &#127791', 8.25)">&#127791<br>$8.25</button>
+							<button class="btn col s4" onclick="quickClickAdd('Pizza', 1.75)">Pizza<br>$1.75</button>
+							<button class="btn col s4" onclick="quickClickAdd('Taco', 1.00)">Taco<br>$1.00</button>
+							<button class="btn col s4" onclick="quickClickAdd('Burrito', 8.25)">Burrito<br>$8.25</button>
 						</div>
 					</div>
 					<div class="card-content">
@@ -109,13 +108,35 @@
 		</div>
 	</div>
 
-	<!-- Include custom JavaScript code here -->
+	<!-- Modal for Receipt -->
+	<div id="receiptModal" class="modal">
+		<div class="modal-content">
+			<h4>Receipt</h4>
+			<ul id="receipt-items"></ul>
+			<h5>Total: $<span id="receipt-total">0.00</span></h5>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+		</div>
+	</div>
+
 	<script>
-		// Define global variables
 		var cart = [];
 		var total = 0;
 
 		// Add item to cart
+		function quickClickAdd(itemName, itemPrice) {
+			var item = {
+				name: itemName,
+				price: parseFloat(itemPrice)
+			};
+			cart.push(item);
+			$('#cart-items').append('<tr><td>' + item.name + '</td><td>$' + item.price.toFixed(2) + '</td></tr>');
+			total += item.price;
+			$('#total').text(total.toFixed(2));
+		}
+
+		// Add special item
 		function addItem() {
 			var item = {
 				name: $('#item-name').val(),
@@ -129,22 +150,19 @@
 			$('#item-price').val('');
 		}
 
-		// Quick click add
-		function quickClickAdd(itemName, itemPrice) {
-			var item = {
-				name: itemName,
-				price: parseFloat(itemPrice)
-			};
-			cart.push(item);
-			$('#cart-items').append('<tr><td>' + item.name + '</td><td>$' + item.price.toFixed(2) + '</td></tr>');
-			total += item.price;
-			$('#total').text(total.toFixed(2));
-		}
-
-
 		// Process payment
 		function processPayment() {
-			alert('Thanks for shopping with us!');
+			$('#receipt-items').empty();
+			cart.forEach(item => {
+				$('#receipt-items').append('<li>' + item.name + ' - $' + item.price.toFixed(2) + '</li>');
+			});
+			$('#receipt-total').text(total.toFixed(2));
+
+			// Show receipt modal
+			var modal = M.Modal.getInstance($('#receiptModal'));
+			modal.open();
+
+			// Reset cart
 			cart = [];
 			total = 0;
 			$('#cart-items').empty();
@@ -158,6 +176,11 @@
 			$('#cart-items').empty();
 			$('#total').text('0.00');
 		}
+
+		// Initialize modal
+		$(document).ready(function(){
+			$('.modal').modal();
+		});
 	</script>
 </body>
 </html>
