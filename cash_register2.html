@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shop / Cash Register</title>
+	<!-- Add Materialize CSS and JavaScript -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+	<style>
+		.quick-click-buttons .btn {
+			background-color: #318434;
+			color: white;
+			font-size: 12px;
+			padding: 10px 20px;
+			border-radius: 5px;
+			height: auto;
+			line-height: inherit;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		.quick-click-buttons img {
+			width: 50px;
+			height: 50px;
+			object-fit: cover;
+			margin-bottom: 5px;
+		}
+		.quick-click-buttons .price {
+			color: white;
+			font-size: 16px;
+			margin-top: 5px;
+		}
+
+		/* Mobile responsiveness */
+		@media (max-width: 768px) {
+			.quick-click-buttons .btn {
+				font-size: 10px;
+				padding: 8px 10px;
+			}
+			.container {
+				padding: 10px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Navigation bar -->
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo center">Shop / Cash Register</a>
+		</div>
+	</nav>
+
+	<!-- Tab Structure for Grocery Types -->
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<ul class="tabs">
+					<li class="tab col s3"><a href="#fruits">Fruits</a></li>
+					<li class="tab col s3"><a href="#vegetables">Vegetables</a></li>
+					<li class="tab col s3"><a href="#food">Food</a></li>
+					<li class="tab col s3"><a href="#special-orders">Special Orders</a></li>
+				</ul>
+			</div>
+
+			<!-- Fruits Tab -->
+			<div id="fruits" class="col s12">
+				<div class="card-content">
+					<div class="quick-click-buttons row">
+						<button class="btn col s4" onclick="quickClickAdd('Grapes', 3.50)">
+							<img src="grapes.png" alt="Grapes">
+							<span class="price">$3.50</span>
+						</button>
+						<button class="btn col s4" onclick="quickClickAdd('Water Melon', 3.00)">
+							<img src="watermelon.png" alt="Watermelon">
+							<span class="price">$3.00</span>
+						</button>
+						<button class="btn col s4" onclick="quickClickAdd('Lemon', 0.75)">
+							<img src="lemon.png" alt="Lemon">
+							<span class="price">$0.75</span>
+						</button>
+					</div>
+					<div class="quick-click-buttons row">
+						<button class="btn col s4" onclick="quickClickAdd('Banana', 0.50)">
+							<img src="banana.png" alt="Banana">
+							<span class="price">$0.50</span>
+						</button>
+						<button class="btn col s4" onclick="quickClickAdd('Pineapple', 5.00)">
+							<img src="pineapple.png" alt="Pineapple">
+							<span class="price">$5.00</span>
+						</button>
+						<button class="btn col s4" onclick="quickClickAdd('Apple', 3.75)">
+							<img src="apple.png" alt="Apple">
+							<span class="price">$3.75</span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Vegetables Tab -->
+			<div id="vegetables" class="col s12">
+				<div class="card-content">
+					<div class="quick-click-buttons row">
+						<button class="btn col s4" onclick="quickClickAdd('Avocado', 2.50)">
+							<img src="avocado.png" alt="Avocado">
+							<span class="price">$2.50</span>
+						</button>
+						<button class="btn col s4" onclick="quickClickAdd('Corn', 0.50)">
+							<img src="corn.png" alt="Corn">
+							<span class="price">$0.50</span>
+						</button>
+						<button class="btn col s4" onclick="quickClickAdd('Carrot', 0.15)">
+							<img src="carrot.png" alt="Carrot">
+							<span class="price">$0.15</span>
+						</button>
+					</div>
+					<div class="quick-click-buttons row">
+						<button class="btn col s4" onclick="quickClickAdd('Broccoli', 1.50)">
+							<img src="broccoli.png" alt="Broccoli">
+							<span class="price">$1.50</span>
+						</button>
+						<button class="btn col s4" onclick="quickClickAdd('Potato', 1.75)">
+							<img src="potato.png" alt="Potato">
+							<span class="price">$1.75</span>
+						</button>
+						<button class="btn col s4" onclick="quickClickAdd('Hot Pepper', 0.75)">
+							<img src="hot_pepper.png" alt="Hot Pepper">
+							<span class="price">$0.75</span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Food Tab -->
+			<div id="food" class="col s12">
+				<div class="card-content">
+					<div class="quick-click-buttons row">
+						<button class="btn col s4" onclick="quickClickAdd('Hamburger', 6.50)">
+							<img src="hamburger.png" alt="Hamburger">
+							<span class="price">$6.50</span>
+						</button>
+						<button class="btn col s4" onclick="quickClickAdd('Hot Dog', 1.50)">
+							<img src="hotdog.png" alt="Hot Dog">
+							<span class="price">$1.50</span>
+						</button>
+						<button class="btn col s4" onclick="quickClickAdd('French Fries', 1.25)">
+							<img src="frenchfries.png" alt="French Fries">
+							<span class="price">$1.25</span>
+						</button>
+					</div>
+					<div class="quick-click-buttons row">
+						<button class="btn col s4" onclick="quickClickAdd('Pizza', 1.75)">
+							<img src="pizza.png" alt="Pizza">
+							<span class="price">$1.75</span>
+						</button>
+						<button class="btn col s4" onclick="quickClickAdd('Taco', 1.00)">
+							<img src="taco.png" alt="Taco">
+							<span class="price">$1.00</span>
+						</button>
+						<button class="btn col s4" onclick="quickClickAdd('Burrito', 8.25)">
+							<img src="burrito.png" alt="Burrito">
+							<span class="price">$8.25</span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Special Orders Tab -->
+			<div id="special-orders" class="col s12">
+				<div class="card-content">
+					<form>
+						<div class="input-field">
+							<input type="text" id="item-name">
+							<label for="item-name">Item name</label>
+						</div>
+						<div class="input-field">
+							<input type="number" id="item-price">
+							<label for="item-price">Item price</label>
+						</div>
+						<button class="btn waves-effect waves-light" type="button" onclick="addItem()">Add Item</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- Cart Section (outside of tabs for consistent display) -->
+		<div class="row">
+			<div class="col s12">
+				<div class="card">
+					<div class="card-content">
+						<span class="card-title">Cart</span>
+						<table>
+							<thead>
+								<tr>
+									<th>Item</th>
+									<th>Price</th>
+								</tr>
+							</thead>
+							<tbody id="cart-items">
+							</tbody>
+						</table>
+						<h5>Total: $<span id="total">0.00</span></h5>
+						<button class="btn waves-effect waves-light" type="button" onclick="processPayment()">Process Payment</button>
+						<button class="btn waves-effect waves-light" type="button" onclick="cancelOrder()">Cancel Order</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal for Receipt -->
+	<div id="receiptModal" class="modal">
+		<div class="modal-content">
+			<h4>Receipt</h4>
+			<ul id="receipt-items"></ul>
+			<h5>Total: $<span id="receipt-total">0.00</span></h5>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+		</div>
+	</div>
+
+	<!-- JavaScript to make tabs and modals work -->
+	<script>
+		$(document).ready(function(){
+			$('.tabs').tabs();
+			$('.modal').modal();
+		});
+
+		var cart = [];
+		var total = 0;
+
+		function quickClickAdd(itemName, itemPrice) {
+			var item = {
+				name: itemName,
+				price: parseFloat(itemPrice)
+			};
+			cart.push(item);
+			$('#cart-items').append('<tr><td>' + item.name + '</td><td>$' + item.price.toFixed(2) + '</td></tr>');
+			total += item.price;
+			$('#total').text(total.toFixed(2));
+		}
+
+		function addItem() {
+			var item = {
+				name: $('#item-name').val(),
+				price: parseFloat($('#item-price').val())
+			};
+			cart.push(item);
+			$('#cart-items').append('<tr><td>' + item.name + '</td><td>$' + item.price.toFixed(2) + '</td></tr>');
+			total += item.price;
+			$('#total').text(total.toFixed(2));
+			$('#item-name').val('');
+			$('#item-price').val('');
+		}
+
+		function processPayment() {
+			$('#receipt-items').empty();
+			cart.forEach(item => {
+				$('#receipt-items').append('<li>' + item.name + ' - $' + item.price.toFixed(2) + '</li>');
+			});
+			$('#receipt-total').text(total.toFixed(2));
+
+			var modal = M.Modal.getInstance($('#receiptModal'));
+			modal.open();
+
+			cart = [];
+			total = 0;
+			$('#cart-items').empty();
+			$('#total').text('0.00');
+		}
+
+		function cancelOrder() {
+			cart = [];
+			total = 0;
+			$('#cart-items').empty();
+			$('#total').text('0.00');
+		}
+	</script>
+</body>
+</html>
